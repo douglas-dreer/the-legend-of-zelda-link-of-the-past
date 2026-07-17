@@ -81,4 +81,10 @@ void upload_palette();
 
 uint8 get_pixel_4bpp(const uint8* tile_data, int x, int y);
 
+// Palette DMA: $00:8B87 — CGRAM upload via DMA channel 1
+void palette_dma_upload(void);
+
+// OAM DMA: $00:8BAA — OAM upload via DMA channel 0
+void oam_dma_upload(void);
+
 #endif // PPU_H

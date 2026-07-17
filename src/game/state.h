@@ -117,12 +117,23 @@ void init_game_state(void);
 void run_secondary_mode(void);
 void game_mode_dispatch(uint8 mode);
 
-// Game Mode Functions
-void game_mode_init(void);
-void game_mode_secondary(void);
-void game_mode_dma_vram(void);
-void game_mode_tilemap(void);
-void game_mode_full_dma(void);
+// Game Mode Functions (16 modes, dispatch table at $00:8C7E)
+void game_mode_init(void);           // mode 0x00 — $8CE3
+void game_mode_secondary(void);      // mode 0x01 — $8CB0
+void game_mode_dma_vram(void);       // mode 0x02 — $8CE4
+void game_mode_tilemap(void);        // mode 0x03 — $8D13
+void game_mode_full_dma(void);       // mode 0x04 — $8D62
+void game_mode_vram_update(void);    // mode 0x05 — $8D7C
+void game_mode_idle(void);           // mode 0x06 — $8D95
+void game_mode_vram_stream(void);    // mode 0x07 — $8E4B
+void game_mode_bg_update(void);      // mode 0x08 — $8E57
+void game_mode_sprite_update(void);  // mode 0x09 — $8EA9
+void game_mode_oam_update(void);     // mode 0x0A — $8E72
+void game_mode_scroll_update(void);  // mode 0x0B — $8F16
+void game_mode_dma_partial(void);    // mode 0x0C — $8EE7
+void game_mode_dma_alt(void);        // mode 0x0D — $8F38
+void game_mode_vram_write(void);     // mode 0x0E — $8F45
+void game_mode_multi_dma(void);      // mode 0x0F — $8F4B
 
 // Transition Functions
 void start_transition(GameState next_state);

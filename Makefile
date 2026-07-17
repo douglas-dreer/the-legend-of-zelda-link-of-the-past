@@ -14,7 +14,16 @@ SOURCES = $(SRC_DIR)/main.cpp \
           $(SRC_DIR)/game/sprites.cpp \
           $(SRC_DIR)/game/collision.cpp \
           $(SRC_DIR)/game/room.cpp \
-          $(SRC_DIR)/audio/apu.cpp
+          $(SRC_DIR)/audio/apu.cpp \
+          $(SRC_DIR)/engine/reset.cpp \
+          $(SRC_DIR)/engine/nmi.cpp \
+          $(SRC_DIR)/engine/main_loop.cpp \
+          $(SRC_DIR)/data/palettes.cpp \
+          $(SRC_DIR)/data/tiles.cpp \
+          $(SRC_DIR)/data/maps.cpp \
+          $(SRC_DIR)/data/dungeon_data.cpp \
+          $(SRC_DIR)/data/compression.cpp \
+          $(SRC_DIR)/data/music_data.cpp
 
 OBJECTS = $(SOURCES:$(SRC_DIR)/%.cpp=$(BUILD_DIR)/%.o)
 
@@ -23,7 +32,7 @@ OBJECTS = $(SOURCES:$(SRC_DIR)/%.cpp=$(BUILD_DIR)/%.o)
 all: dirs $(TARGET)
 
 dirs:
-	@mkdir -p $(BUILD_DIR)/snes $(BUILD_DIR)/game $(BUILD_DIR)/audio
+	@mkdir -p $(BUILD_DIR)/snes $(BUILD_DIR)/game $(BUILD_DIR)/audio $(BUILD_DIR)/engine $(BUILD_DIR)/data
 
 $(TARGET): $(OBJECTS)
 	$(CXX) $(CXXFLAGS) -o $@ $^

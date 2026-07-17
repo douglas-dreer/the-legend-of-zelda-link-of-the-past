@@ -19,7 +19,23 @@ set(SOURCES
     src/game/sprites.cpp
     src/game/collision.cpp
     src/game/room.cpp
+    src/game/entity.cpp
+    src/game/enemy.cpp
+    src/game/overworld.cpp
+    src/game/dungeon.cpp
+    src/game/transition.cpp
+    src/game/sound.cpp
     src/audio/apu.cpp
+    src/engine/reset.cpp
+    src/engine/nmi.cpp
+    src/engine/main_loop.cpp
+    # Data files (Banks $0A-$1F)
+    src/data/palettes.cpp
+    src/data/tiles.cpp
+    src/data/maps.cpp
+    src/data/dungeon_data.cpp
+    src/data/compression.cpp
+    src/data/music_data.cpp
 )
 
 # Create executable
