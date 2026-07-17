@@ -1,0 +1,20 @@
+{
+  "path": "roms/Legend of Zelda, The - A Link to the Past (USA).sfc",
+  "size": 1048576,
+  "header": {
+    "game_name": "THE LEGEND OF ZELDA  ",
+    "map_mode": 32,
+    "map_mode_name": "LoROM",
+    "rom_size": 2,
+    "rom_size_name": "4 MB (32 Mbit)",
+    "ram_size": 10,
+    "country": 3,
+    "country_name": "Suécia",
+    "publisher": 1,
+    "publisher_name": "Nintendo",
+    "version": 1,
+    "checksum_complement": 61952,
+    "checksum": 3408,
+    "header_address": 32704
+  }
+}

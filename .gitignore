@@ -1,5 +1,37 @@
-# ROMS
-
+# ROMs e save states
 *.srm
 *.sfc
+*.szst
+*.szst-last
 
+# Build output
+build/
+zelda-lttp-decomp
+*.o
+
+# Output gerado (arquivos grandes)
+output/audio/*.wav
+output/tiles/*.ppm
+output/assembly/zelda_full.asm
+output/zelda_rebuilt.sfc
+output/zelda_rebuilt.data.szsnes/
+tools/extractor/output/
+tools/disassembler/__pycache__/
+tools/extractor/__pycache__/
+tools/parser/__pycache__/
+tools/validation/__pycache__/
+
+# Emulador save data
+*.data.szsnes/
+
+# Python
+__pycache__/
+*.pyc
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
