@@ -17,6 +17,9 @@
 // ROM Data (loaded from file)
 uint8 rom[ROM_SIZE];
 
+// Asset paths (relative to executable)
+const char* ASSETS_DIR = "assets";
+
 // RAM Arrays
 uint8 wram_low[WRAM_LOW_SIZE];
 uint8 wram_extended[WRAM_EXTENDED_SIZE];
@@ -95,16 +98,30 @@ int main(int argc, char* argv[]) {
     printf("The Legend of Zelda: A Link to the Past - PC Port\n");
     printf("Decompilation Project\n\n");
 
-    // Load ROM
-    const char* rom_path = "data/zelda.sfc";
-    if (argc > 1) {
-        rom_path = argv[1];
-    }
+    // Load assets from assets/ directory (no ROM dependency)
+    printf("Loading assets from %s/\n", ASSETS_DIR);
 
-    if (!load_rom(rom_path)) {
-        printf("Failed to load ROM. Exiting.\n");
-        return 1;
-    }
+    // Load palettes
+    printf("  Palettes: %s/palettes/palettes.json\n", ASSETS_DIR);
+    // TODO: Parse palettes.json and populate palette arrays
+
+    // Load tiles
+    printf("  Tiles: %s/tiles/\n", ASSETS_DIR);
+    // TODO: Load tile data from assets/tiles/
+
+    // Load maps
+    printf("  Maps: %s/maps/\n", ASSETS_DIR);
+    // TODO: Load map data from assets/maps/
+
+    // Load audio
+    printf("  Audio: %s/audio.tar.gz\n", ASSETS_DIR);
+    // TODO: Extract and load BRR samples from assets/audio.tar.gz
+
+    // Load text
+    printf("  Texts: %s/texts.tar.gz\n", ASSETS_DIR);
+    // TODO: Extract and load text data from assets/texts.tar.gz
+
+    printf("Assets loaded successfully.\n\n");
 
     // Reset SNES — full hardware init sequence
     // Implements $00:8000-$00:8031 (init_hardware + boot_spc700 + clear_ram + enable_nmi)

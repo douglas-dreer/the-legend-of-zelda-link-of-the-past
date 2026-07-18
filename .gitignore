@@ -9,12 +9,8 @@ build/
 zelda-lttp-decomp
 *.o
 
-# Output gerado (arquivos grandes)
-output/audio/*.wav
-output/tiles/*.ppm
-output/assembly/zelda_full.asm
-output/zelda_rebuilt.sfc
-output/zelda_rebuilt.data.szsnes/
+# Output gerado (arquivos grandes - regeneration scripts)
+output/
 tools/extractor/output/
 tools/disassembler/__pycache__/
 tools/extractor/__pycache__/
